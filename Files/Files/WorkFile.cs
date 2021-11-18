@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Files
 {
@@ -6,17 +9,31 @@ namespace Files
     {
         public void CreateFile(string path)
         {
-            File.Create(path);
-
+            File.Create(path).Dispose();
+            
         }
 
-        public void WriteIntoFile(string path, string text)
+        public void WriteToFile(string path, string text)
         {
             using (StreamWriter streamWriter = new StreamWriter(path))
             {
                 streamWriter.AutoFlush = true;
-                streamWriter.Write(text);
-                streamWriter.Close();
+                streamWriter.Write(text, Encoding.UTF8);
+                streamWriter.Dispose();
+            }
+
+        }
+
+        public async Task AddedTextToFile(string path)
+        {
+
+            using (StreamWriter filestreamsync = new StreamWriter(path, true))
+            {
+
+                filestreamsync.AutoFlush = true;
+                await filestreamsync.WriteAsync(Environment.NewLine + DateTime.Now.ToString());
+                await filestreamsync.DisposeAsync();
+
             }
 
         }

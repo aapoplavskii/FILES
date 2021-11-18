@@ -17,9 +17,8 @@ namespace Files
 
             try
             {
-                if (Directory.Exists(path1))
-                    Directory.Delete(path1);
-                workDirectory.CreateDirectory(path1);
+                if (!Directory.Exists(path1))
+                   workDirectory.CreateDirectory(path1);
 
                 for (int i = 1; i <= 10; i++)
                 {
@@ -29,14 +28,14 @@ namespace Files
                         File.Delete(filepath);
                     
                     workFile.CreateFile(filepath);
-                    workFile.WriteIntoFile(filepath, $"File{i}");
+                    workFile.WriteToFile(filepath, $"File{i}");
+                    var task = workFile.AddedTextToFile(filepath);
                 }
 
 
 
-                if (Directory.Exists(path2))
-                    Directory.Delete(path2);
-                workDirectory.CreateDirectory(path2);
+                if (!Directory.Exists(path2))
+                   workDirectory.CreateDirectory(path2);
 
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@ namespace Files
     {
         public void CreateFile(string path)
         {
-            File.Create(path).Dispose();
+            using (File.Create(path));
             
         }
 
@@ -19,7 +19,7 @@ namespace Files
             {
                 streamWriter.AutoFlush = true;
                 streamWriter.Write(text, Encoding.UTF8);
-                streamWriter.Dispose();
+                
             }
 
             
@@ -33,8 +33,7 @@ namespace Files
 
                 filestreamsync.AutoFlush = true;
                 await filestreamsync.WriteAsync(Environment.NewLine + DateTime.Now.ToString());
-                await filestreamsync.DisposeAsync();
-
+                
             }
 
         }
@@ -44,7 +43,6 @@ namespace Files
             using (StreamReader streamReader = new StreamReader(path))
             {
                 sr = streamReader.ReadToEnd();
-                streamReader.Dispose();
             }
 
             return sr;

@@ -17,38 +17,11 @@ namespace Files
 
             try
             {
-                if (!Directory.Exists(path1))
-                   workDirectory.CreateDirectory(path1);
+                workDirectory.CreateDirectory(path1);
+                workDirectory.CreateDirectory(path2);
 
-                for (int i = 1; i <= 10; i++)
-                {
-                    string filepath = $@"c:\Otus\TestDir1\File{i}.txt";
-
-                    if (File.Exists(filepath))
-                        File.Delete(filepath);
-                    
-                    workFile.CreateFile(filepath);
-                    workFile.WriteToFile(filepath, $"File{i}");
-                    var task = workFile.AddedTextToFile(filepath);                                    
-                }
-
-
-
-                if (!Directory.Exists(path2))
-                   workDirectory.CreateDirectory(path2);
-
-                for (int i = 1; i <= 10; i++)
-                {
-                    string filepath = $@"c:\Otus\TestDir2\File{i}.txt";
-
-                    if (File.Exists(filepath))
-                        File.Delete(filepath);
-
-                    workFile.CreateFile(filepath);
-                    workFile.WriteToFile(filepath, $"File{i}");
-                    var task = workFile.AddedTextToFile(filepath);
-                }
-
+                CreateAndWriteFile(path1, workFile);
+                CreateAndWriteFile(path2, workFile);
 
                 Console.WriteLine($"Данные по каталогу {Path.GetFullPath(path1)}:");
                 Console.WriteLine("");
@@ -57,8 +30,6 @@ namespace Files
                 Console.WriteLine($"Данные по каталогу {Path.GetFullPath(path2)}:");
                 Console.WriteLine("");
                 WriteConsoleInfoForFile(path2, workFile);
-
-
 
             }
             catch (Exception ex)
@@ -83,6 +54,23 @@ namespace Files
                 Console.WriteLine("");
             }
 
+
+        }
+        
+        static void CreateAndWriteFile(string path, WorkFile workFile)
+        {
+
+            for (int i = 1; i <= 10; i++)
+            {
+                string filepath = $@"{path}\File{i}.txt";
+
+                if (File.Exists(filepath))
+                    File.Delete(filepath);
+
+                workFile.CreateFile(filepath);
+                workFile.WriteToFile(filepath, $"File{i}");
+                var task = workFile.AddedTextToFile(filepath);
+            }
 
         }
 

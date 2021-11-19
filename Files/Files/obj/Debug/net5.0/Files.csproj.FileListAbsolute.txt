@@ -1,0 +1,16 @@
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.exe
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.deps.json
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.runtimeconfig.json
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.runtimeconfig.dev.json
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.dll
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\ref\Files.dll
+C:\WorkC#\DZ\Files\Files\Files\bin\Debug\net5.0\Files.pdb
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.csproj.AssemblyReference.cache
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.AssemblyInfoInputs.cache
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.AssemblyInfo.cs
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.csproj.CoreCompileInputs.cache
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.dll
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\ref\Files.dll
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.pdb
+C:\WorkC#\DZ\Files\Files\Files\obj\Debug\net5.0\Files.genruntimeconfig.cache

@@ -22,6 +22,7 @@ namespace Files
                 streamWriter.Dispose();
             }
 
+            
         }
 
         public async Task AddedTextToFile(string path)
@@ -36,6 +37,18 @@ namespace Files
 
             }
 
+        }
+        public string ReadFile(string path)
+        {
+            string sr = string.Empty;
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                sr = streamReader.ReadToEnd();
+                streamReader.Dispose();
+            }
+
+            return sr;
+        
         }
 
     }

@@ -7,8 +7,8 @@ namespace Files
         public void CreateDirectory(string path)
         {
 
-
-            Directory.CreateDirectory(path);
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
         }
 

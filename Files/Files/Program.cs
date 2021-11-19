@@ -29,9 +29,7 @@ namespace Files
                     
                     workFile.CreateFile(filepath);
                     workFile.WriteToFile(filepath, $"File{i}");
-                    var task = workFile.AddedTextToFile(filepath);
-
-                    
+                    var task = workFile.AddedTextToFile(filepath);                                    
                 }
 
 
@@ -49,18 +47,16 @@ namespace Files
                     workFile.CreateFile(filepath);
                     workFile.WriteToFile(filepath, $"File{i}");
                     var task = workFile.AddedTextToFile(filepath);
-
-
                 }
 
 
                 Console.WriteLine($"Данные по каталогу {Path.GetFullPath(path1)}:");
                 Console.WriteLine("");
-                WriteInfoForFile(path1, workFile);
+                WriteConsoleInfoForFile(path1, workFile);
 
                 Console.WriteLine($"Данные по каталогу {Path.GetFullPath(path2)}:");
                 Console.WriteLine("");
-                WriteInfoForFile(path2, workFile);
+                WriteConsoleInfoForFile(path2, workFile);
 
 
 
@@ -74,7 +70,7 @@ namespace Files
 
         }
 
-        static void WriteInfoForFile(string path, WorkFile workFile)
+        static void WriteConsoleInfoForFile(string path, WorkFile workFile)
         {
 
             var filesInDirectory = Directory.GetFiles(path);

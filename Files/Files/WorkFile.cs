@@ -1,31 +1,24 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Files
 {
     public class WorkFile
     {
-        public void CreateFile(string path)
-        {
-            using (File.Create(path));
-            
-        }
-
-        public void WriteToFile(string path, string text)
+        public void CreateFileAndWriteInfoToFile(string path, string text)
         {
             using (StreamWriter streamWriter = new StreamWriter(path))
             {
                 streamWriter.AutoFlush = true;
                 streamWriter.Write(text, Encoding.UTF8);
-                
+
             }
 
-            
+
         }
 
-        public async Task AddedTextToFile(string path)
+        public async void AddedTextToFile(string path)
         {
 
             using (StreamWriter filestreamsync = new StreamWriter(path, true))
@@ -33,7 +26,7 @@ namespace Files
 
                 filestreamsync.AutoFlush = true;
                 await filestreamsync.WriteAsync(Environment.NewLine + DateTime.Now.ToString());
-                
+
             }
 
         }
@@ -46,7 +39,7 @@ namespace Files
             }
 
             return sr;
-        
+
         }
 
     }

@@ -66,10 +66,9 @@ namespace Files
 
                 if (File.Exists(filepath))
                     File.Delete(filepath);
-
-                workFile.CreateFile(filepath);
-                workFile.WriteToFile(filepath, $"File{i}");
-                var task = workFile.AddedTextToFile(filepath);
+                               
+                workFile.CreateFileAndWriteInfoToFile(filepath, $"File{i}");
+                workFile.AddedTextToFile(filepath);
             }
 
         }
